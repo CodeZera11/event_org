@@ -4,11 +4,16 @@ import { fadeIn } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import { Freehand } from "next/font/google";
+import { Freehand, Patrick_Hand_SC } from "next/font/google";
 import { TitleText, TypingText } from "./CustomTexts";
 import Link from "next/link";
 
 const freehand = Freehand({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const phs = Patrick_Hand_SC({
   subsets: ["latin"],
   weight: "400",
 });
@@ -23,7 +28,7 @@ const ProjectCard = ({ title, type, slug, thumbnail, index }) => {
       viewport={{ once: true }}
       className={`cursor-pointer transition-transform duration-300 ease-linear ${freehand.className}`}
     >
-      <Link href={`/${slug}`}>
+      <Link href={`/projects/${slug}`}>
         <div className={"relative border border-white"}>
           <Image
             src={thumbnail}
@@ -34,12 +39,10 @@ const ProjectCard = ({ title, type, slug, thumbnail, index }) => {
           />
           <div className={"w-full bg-black absolute inset-0 opacity-50"} />
           <div
-            className={
-              "relative flex flex-col items-start justify-start bg-secondary-white p-4"
-            }
+            className={`relative flex flex-col items-start justify-start bg-secondary-white p-4 ${freehand.className}`}
           >
-            <h1 className={"text-xl "}>{title}</h1>
-            <p className={"text-sm"}>{type}</p>
+            <h1 className={`text-xl ${freehand.className}`}>{title}</h1>
+            <p className={`text-sm ${phs.className}`}>{type}</p>
           </div>
         </div>
       </Link>

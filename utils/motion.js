@@ -126,3 +126,18 @@ export const buttonVariant = (direction, type, delay, duration) => ({
     },
   },
 });
+
+export const opacity = (delay) => ({
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      type: "tween",
+      duration: 2,
+      ease: "easeInOut",
+      delay
+    },
+  },
+});
