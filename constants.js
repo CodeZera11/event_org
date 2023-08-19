@@ -70,3 +70,31 @@ export const projectInfo = [
     images: ["/cover-page-1.jpeg", "/bg-cover-3.jpeg"],
   },
 ];
+
+export const team = [
+  {
+    image: "/about-1.jpeg",
+    name: "Walid Baz",
+    role: "The Creator",
+  },
+  {
+    image: "/about-1.jpeg",
+    name: "Walid Baz",
+    role: "The Creator",
+  },
+  {
+    image: "/about-1.jpeg",
+    name: "Walid Baz",
+    role: "The Creator",
+  },
+  {
+    image: "/about-1.jpeg",
+    name: "Walid Baz",
+    role: "The Creator",
+  },
+  {
+    image: "/about-1.jpeg",
+    name: "Walid Baz",
+    role: "The Creator",
+  },
+]

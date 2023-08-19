@@ -1,17 +1,11 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import {
-  fadeIn,
-  opacity,
-  projectInfoTitleBorder,
-  staggerContainer,
-} from "@/utils/motion";
+import { fadeIn, opacity, staggerContainer } from "@/utils/motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { projectInfo } from "@/constants";
-import { TitleText, TypingText } from "@/components/CustomTexts";
+import { TypingText } from "@/components/CustomTexts";
 import { Roboto } from "next/font/google";
 import styles from "@/styles";
 import Button from "@/components/Button";
@@ -57,7 +51,7 @@ const ProjectPage = ({ params }) => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={"w-full h-[100vh] bg-black relative overflow-y-auto"}
+      className={`w-full h-[100vh] bg-black relative overflow-y-auto`}
     >
       <motion.div>
         <Image
@@ -247,7 +241,7 @@ const ProjectPage = ({ params }) => {
             className="bg-white w-[60px] h-1 rounded-full mt-2"
           />
         </div>
-        <div className={`styles.paddings flex items-center justify-between `}>
+        <div className={` flex items-center justify-between `}>
           <motion.h1
             variants={fadeIn("left", "tween", 1.2, 1)}
             initial={"hidden"}
