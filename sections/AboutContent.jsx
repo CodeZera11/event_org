@@ -21,7 +21,7 @@ const freehand = Freehand({
   weight: "400",
 });
 
-const AboutPage = () => {
+const AboutContent = () => {
   return (
     <motion.section
       variants={staggerContainer}
@@ -30,33 +30,7 @@ const AboutPage = () => {
       viewport={{ once: false, amount: 0.25 }}
       className={`w-full h-[100vh] bg-black relative overflow-y-auto`}
     >
-      <motion.div>
-        <Image
-          src={"/bg-cover-3.jpeg"}
-          alt={"about-cover"}
-          width={500}
-          height={500}
-          className={"w-full h-[400px] object-cover absolute"}
-        />
-        <div className="bg-black inset-0 absolute opacity-70 h-[400px]" />
-
-        <div className="flex flex-col items-center justify-center relative p-[100px]">
-          <div className="border-4 border-secondary-white p-10">
-            <h1 className={`text-6xl text-white ${roboto.className} font-bold`}>
-              ABOUT US
-            </h1>
-            <motion.p
-              variants={opacity(0.3)}
-              initial={"hidden"}
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.25 }}
-              className={`${freehand.className} text-white text-center text-md mt-2`}
-            >
-              This is where all your dreams come true.
-            </motion.p>
-          </div>
-        </div>
-      </motion.div>
+      
       <div className={`text-white ${styles.xPaddings} mt-[110px]`}>
         <TypingText
           title={"WELCOME TO MAHAVEER EVENTS!"}
@@ -68,13 +42,15 @@ const AboutPage = () => {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <p className={`text-lg text-secondary-white mb-2 font-thin`}>
+          <p
+            className={`text-md text-secondary-white ${roboto.className} mb-2`}
+          >
             Baz Events is one of the leading and most famous designing companies
             in the world. We convey the understanding of classics and the latest
             trends in design, rich experience and deep-rooted business
             processes, originality and a great passion for our job.
           </p>
-          <p className={`text-lg text-secondary-white font-thin`}>
+          <p className={`text-md text-secondary-white ${roboto.className} `}>
             One of the main distinctive features of Baz Events is the ability to
             intensely understand every client and to offer a fusion that suits
             him/her best. For us creating a concept is an art, and in art, as
@@ -124,7 +100,7 @@ const AboutPage = () => {
           </motion.p>
         </div>
       </div>
-      {/* // Story */}
+      // Story
       <motion.div className="grid grid-cols-2 mt-[150px] bg-[#222222] border-secondary-white border text-white mb-[100px]">
         <motion.div
           variants={opacity(0.3)}
@@ -162,7 +138,7 @@ const AboutPage = () => {
               initial={"hidden"}
               whileInView="show"
               viewport={{ once: false }}
-              className={`text-sm leading-6 text-secondary-white max-w-[550px]`}
+              className={`text-sm text-secondary-white max-w-[550px] ${roboto.className}`}
             >
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
               quasi rerum necessitatibus iste reprehenderit dicta quibusdam ipsa
@@ -181,7 +157,7 @@ const AboutPage = () => {
           </div>
         </div>
       </motion.div>
-      {/* // Team */}
+      // Team
       <section className={`${styles.paddings} bg-[#222222]`}>
         <motion.div
           variants={staggerContainer}
@@ -240,4 +216,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default AboutContent;

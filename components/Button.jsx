@@ -9,7 +9,7 @@ const Button = ({ label, href, delay }) => {
 
   return (
     <motion.button
-      variants={buttonVariant("up", "spring", delay, 1)}
+      variants={buttonVariant("left", "tween", delay, 0.8)}
       className="bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-black hover:text-white transition-colors duration-500 "
       initial="hidden"
       whileInView="show"

@@ -12,7 +12,7 @@ export const navLinks = [
     href: "/about",
   },
   {
-    label: "Contact US",
+    label: "Contact",
     href: "/contact",
   },
 ];
@@ -97,4 +97,4 @@ export const team = [
     name: "Walid Baz",
     role: "The Creator",
   },
-]
+];

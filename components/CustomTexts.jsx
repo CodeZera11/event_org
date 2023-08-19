@@ -1,6 +1,6 @@
 "use client";
 
-import { fadeIn, textContainer, textVariant2 } from "@/utils/motion";
+import { fadeIn, textContainer, textVariant2, zoom } from "@/utils/motion";
 import { motion } from "framer-motion";
 
 export const TypingText = ({ title, textStyles }) => {
@@ -23,7 +23,8 @@ export const TypingText = ({ title, textStyles }) => {
 
 export const TitleText = ({ title, textStyles }) => (
   <motion.h2
-    variants={fadeIn("up", "tween", 2.2, 1)}
+    variants={fadeIn("right", "tween", 1, 1)}
+    // variants={zoom("tween", 2, 2)}
     initial="hidden"
     whileInView="show"
     viewport={{ once: false }}

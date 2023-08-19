@@ -141,3 +141,19 @@ export const opacity = (delay) => ({
     },
   },
 });
+
+export const zoom = (type, delay, duration) => ({
+  hidden: {
+    scale: 0,
+    opacity: 0
+  },
+  show: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type,
+      delay,
+      duration
+    }
+  }
+})

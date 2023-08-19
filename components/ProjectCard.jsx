@@ -22,7 +22,7 @@ const ProjectCard = ({ title, type, slug, thumbnail, index }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.1 }}
-      variants={fadeIn("right", "spring", index * 0.3, 1)}
+      variants={fadeIn("right", "spring", index * 0.2, 1)}
       initial={"hidden"}
       whileInView={"show"}
       viewport={{ once: true }}

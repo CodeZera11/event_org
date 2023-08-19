@@ -23,7 +23,7 @@ const Hero = () => {
           width={2000}
           height={2000}
         />
-        <div className="absolute inset-0 bg-black opacity-50" />
+        <div className="absolute inset-0 bg-black opacity-80" />
         <div className="flex flex-col h-full items-center justify-center relative">
           <TypingText title={"WELCOME TO"} textStyles={"text-center"} />
           <TitleText title={"MAHAVEER EVENTS"} textStyles={"text-center"} />

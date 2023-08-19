@@ -27,7 +27,7 @@ const Projects = () => {
         <div className="flex flex-col h-full items-center justify-center relative">
           <TypingText title={"OUR BEST"} textStyles={"text-center"} />
           <TitleText title={"PROJECTS"} textStyles={"text-center"} />
-          <Button label={"Explore"} href={"/projects"} delay={2.9} />
+          <Button label={"Explore"} href={"/projects"} delay={1} />
         </div>
       </motion.div>
     </section>
