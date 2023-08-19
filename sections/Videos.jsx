@@ -27,7 +27,7 @@ const Videos = () => {
         <div className="flex flex-col h-full items-center justify-center relative">
           <TypingText title={"TAKE A LOOK AT"} textStyles={"text-center"} />
           <TitleText title={"OUR VIDEOS"} textStyles={"text-center"} />
-          <Button label={"WATCH"} href={"/videos"} />
+          <Button label={"WATCH"} href={"/videos"} delay={2.8} />
         </div>
       </motion.div>
     </section>

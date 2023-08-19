@@ -65,7 +65,8 @@ export const projectInfo = [
     inspiration: "Twist Structure",
     services:
       "Structure, Flowers, sound, lighting, screens, production, leveling, chairs, fireworks, hosting, 3d visualization of concept, zoning cards, management, photos and videos, entertainment coordination",
-    story: "",
+    story:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsa, necessitatibus perferendis quod dolor nulla, aspernatur nihil minima inventore consectetur corrupti temporibus consequatur, magnam ut. Ullam, a commodi architecto delectus quo minima veritatis, rem maiores culpa officia excepturi animi",
     images: ["/cover-page-1.jpeg", "/bg-cover-3.jpeg"],
   },
 ];
