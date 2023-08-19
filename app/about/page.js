@@ -200,8 +200,8 @@ const AboutPage = () => {
           />
           <div className={"grid grid-cols-3 gap-10 mt-14"}>
             {team.map((person, index) => (
-            <PersonCard key={index} {...person} index={index + 1} />
-          ))}
+              <PersonCard key={index} {...person} index={index + 1} />
+            ))}
           </div>
         </motion.div>
       </section>

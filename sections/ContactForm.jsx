@@ -11,6 +11,7 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/react";
+import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -22,22 +23,37 @@ const ContactForm = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleOnChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     try {
-        if(data.name === "" || data.email === "" || data.subject === "" || data.message === ""){
-            toast.error("Please fill all the fields")
-            return;
-        }
+      if (
+        data.name === "" ||
+        data.email === "" ||
+        data.subject === "" ||
+        data.message === ""
+      ) {
+        toast.error("Please fill all the fields");
+        return;
+      }
+      setLoading(true);
+      const response = await axios.post("/api/contact", data);
 
-
+      if (response.data.error) {
+        toast.error(response.data.error);
+      }
+      toast.success("We'll contact you soon");
+      setData({});
     } catch (error) {
-        toast.error("Something went wrong!");
+      toast.error("Something went wrong!");
+    } finally {
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <section className={`${styles.paddings} bg-[#222222]`}>
@@ -77,6 +93,7 @@ const ContactForm = () => {
               onChange={handleOnChange}
               className={`text-white mb-5`}
               placeholder="First name"
+              autoComplete="off"
             />
 
             <FormLabel className={`text-white font-bold`}>Email</FormLabel>
@@ -87,6 +104,7 @@ const ContactForm = () => {
               value={data.email}
               onChange={handleOnChange}
               placeholder="Email"
+              autoComplete="off"
             />
             <FormHelperText className={`text-secondary-white mb-5`}>
               Enter the email you'd like to receive the newsletter on.
@@ -100,6 +118,7 @@ const ContactForm = () => {
               value={data.subject}
               onChange={handleOnChange}
               placeholder="Subject"
+              autoComplete="off"
             />
             <FormLabel className={`text-white font-bold`}>Message</FormLabel>
             <Textarea
@@ -108,15 +127,17 @@ const ContactForm = () => {
               name={"message"}
               onChange={handleOnChange}
               placeholder="Enter your message"
+              autoComplete="off"
             />
 
             <FormErrorMessage>Email is required.</FormErrorMessage>
 
             <button
+              disabled={loading}
               onClick={handleSubmit}
               className={`text-black w-full mt-2  bg-white px-6  py-2 rounded-full hover:bg-black hover:text-white font-bold transition-colors duration-500`}
             >
-              Submit
+              {loading ? "loading..." : "Submit"}
             </button>
           </FormControl>
         </div>
